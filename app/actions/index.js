@@ -1,6 +1,7 @@
 import {
     navigateToDetails,
-    navigateToSetupSource
+    navigateToSetupSource,
+    navigateBack
 } from '../actions/nav.js';
 
 import {
@@ -10,6 +11,7 @@ import {
 export {
     navigateToDetails,
     navigateToSetupSource,
+    navigateBack,
 
     getArticles,
 };

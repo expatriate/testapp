@@ -20,6 +20,7 @@ export default articles = (state = initialState, action) => {
                         date: item.date ? new Date(item.date).getTime() : new Date().getTime(),
                         shortDescription: item.shortDescription.replace(regex, ''),
                         title: item.title.replace(regex, ''),
+                        description: item.description.replace(regex, ''),
                     }
                 }).sort(function(a, b) {
                     return a.date - b.date
@@ -40,6 +41,7 @@ export default articles = (state = initialState, action) => {
                             date: item.date ? new Date(item.date).getTime() : new Date().getTime(),
                             shortDescription: item.shortDescription.replace(regex, ''),
                             title: item.title.replace(regex, ''),
+                            description: item.description.replace(regex, ''),
                         }
                     })
                 ].sort(function(a, b) {

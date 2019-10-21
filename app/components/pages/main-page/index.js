@@ -14,8 +14,8 @@ import { connect } from 'react-redux';
 import styles from './styles';
 
 import { 
-  navigateToSetupSource,
-  navigateToDetails
+    navigateToSetupSource,
+    navigateToDetails
 } from '../../../actions';
 
 class MainPage extends Component {

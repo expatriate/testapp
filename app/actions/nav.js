@@ -15,4 +15,7 @@ NavigationActions.navigate({
     routeName: 'SetupSource',
 });
 
-
+export const navigateBack = (key) =>
+NavigationActions.back({
+    key: key || null,
+});
