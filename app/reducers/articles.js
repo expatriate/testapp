@@ -1,21 +1,35 @@
 import * as types from '../actionTypes.js';
 
-let initialState = { 
-    data: {},
-    educations: [],
-    careers: [],
-    services: [],
-    usertags: [],
+let initialState = {
+    list: [{
+        id: 0,
+        name: 'test'
+    },{
+        id: 1,
+        name: 'test'
+    },{
+        id: 2,
+        name: 'test'
+    },{
+        id: 3,
+        name: 'test'
+    }],
+    page: 0,
+    offset: 0,
+    loading: true
 };
 
 export default articles = (state = initialState, action) => {
     switch (action.type) {
-        case types.PROFILE_USER_DATA_RECIEVED:
+        case types.ARTICLES_RECIEVED:
             return {
                 ...state,
-                data: {
-                    ...action.data
-                }
+                list: action.data.map((item, index) => {
+                    return {
+                        ...item,
+                        id: index
+                    }
+                })
             }
         break;
         default:

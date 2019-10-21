@@ -19,13 +19,13 @@ export default RootNavigator = createStackNavigator({
     Main: { 
         screen: MainPage,
         navigationOptions: {
-            headerBackTitle: 'Home',
+            header: null
         },
     },
     Details: {
         screen: DetailsPage,
         navigationOptions: {
-            headerBackTitle: 'Details',
+            header: null
         },
     }
 }, {
