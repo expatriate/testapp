@@ -1,19 +1,7 @@
 import * as types from '../actionTypes.js';
 
 let initialState = {
-    list: [{
-        id: 0,
-        name: 'test'
-    },{
-        id: 1,
-        name: 'test'
-    },{
-        id: 2,
-        name: 'test'
-    },{
-        id: 3,
-        name: 'test'
-    }],
+    list: [],
     page: 0,
     offset: 0,
     loading: true
@@ -27,8 +15,11 @@ export default articles = (state = initialState, action) => {
                 list: action.data.map((item, index) => {
                     return {
                         ...item,
-                        id: index
+                        id: index,
+                        date: new Date(item.date).getTime()
                     }
+                }).sort(function(a, b) {
+                    return a.date - b.date
                 })
             }
         break;

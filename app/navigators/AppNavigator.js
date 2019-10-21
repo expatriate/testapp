@@ -1,6 +1,5 @@
 import React from 'react';
 
-//import { createStackNavigator,  } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import {
     Image,
@@ -14,6 +13,7 @@ import {
 } from '../components/styles/colors.js';
 import MainPage from '../components/pages/main-page';
 import DetailsPage from '../components/pages/details-page';
+import SetupSourcePage from '../components/pages/setup-source-page';
 
 export default RootNavigator = createStackNavigator({
     Main: { 
@@ -24,6 +24,12 @@ export default RootNavigator = createStackNavigator({
     },
     Details: {
         screen: DetailsPage,
+        navigationOptions: {
+            header: null
+        },
+    },
+    SetupSource: {
+        screen: SetupSourcePage,
         navigationOptions: {
             header: null
         },

@@ -5,28 +5,10 @@ import { Colors } from '../../styles/colors';
 
 export default StyleSheet.create({
     container: {
-        flex: 1
-    },
-    item: {
-        backgroundColor: '#f9c2ff',
-        padding: 10,
-        marginVertical: 8,
-        marginHorizontal: 16,
-    },
-    title: {
-        fontSize: 16,
-        color: '#000000'
-    },
-    nullDatacontainer: {
-        flexDirection: 'row',
+        flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        width: '100%',
-        paddingVertical: 20
-    },
-    nullDatacontainer_text: {
-        color: Colors.COLOR_GRAY,
-        fontSize: 20
+        flexDirection: 'column'
     },
     buttonContainer: {
         flexDirection: 'row',
@@ -43,5 +25,17 @@ export default StyleSheet.create({
     buttonText: {
         fontSize: 20,
         fontWeight: 'bold'
+    },
+
+    formContainer: {
+        width: '100%',
+        paddingHorizontal: 20,
+    },
+    formInputText: {
+        fontSize: 20,
+        textAlign: 'center',
+        borderBottomWidth: 1,
+        borderColor: Colors.COLOR_GRAY,
+        marginBottom: 10
     }
 });

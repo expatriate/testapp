@@ -13,7 +13,7 @@ import { connect } from 'react-redux';
 import styles from './styles';
 
 import { 
-  getArticles
+  navigateToSetupSource
 } from '../../../actions';
 
 class MainPage extends Component {
@@ -22,7 +22,7 @@ class MainPage extends Component {
     }
 
     componentDidMount() {
-        this.props.getArticles();
+        //this.props.getArticles();
     }
 
     _renderArticle = (article) => {
@@ -33,6 +33,11 @@ class MainPage extends Component {
             </Text>
         </View>
       );
+    }
+
+    setupTheSource = () => {
+        
+        this.props.navigateToSetupSource();
     }
 
     render() {
@@ -51,14 +56,17 @@ class MainPage extends Component {
                         return(
                             <View style={styles.nullDatacontainer}>
                                 <Text style={styles.nullDatacontainer_text}>
-                                    nothing here
+                                    The source is not defined
                                 </Text>
                             </View>
                         )}
                     }
                     />
                 <View style={styles.buttonContainer}>
-                    <TouchableOpacity style={styles.button}>
+                    <TouchableOpacity 
+                        style={styles.button} 
+                        onPress={() => {this.setupTheSource()}}
+                        >
                         <Text style={styles.buttonText}>
                             Setup the source
                         </Text>
@@ -71,7 +79,7 @@ class MainPage extends Component {
 
 function mapDispatchToProps(dispatch) {
     return bindActionCreators({
-        getArticles: getArticles,
+        navigateToSetupSource: navigateToSetupSource,
     }, dispatch);
 }
 

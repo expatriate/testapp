@@ -9,3 +9,10 @@ NavigationActions.navigate({
     },
     key: 'Task_' + taskid + new Date().getTime()
 });
+
+export const navigateToSetupSource = () =>
+NavigationActions.navigate({
+    routeName: 'SetupSource',
+});
+
+

@@ -1,16 +1,21 @@
 import * as types from '../actionTypes.js';
 import axios from 'axios';
 
-export const getArticles = () => {
+import {
+    Alert
+} from 'react-native';
 
+export const getArticles = (url) => {
     return dispatch => {
         try {
-            axios.get(`https://gist.githubusercontent.com/happy-thorny/bd038afd981be300ac2ed6e5a8ad9f3c/raw/dd90f04475a2a7c1110151aacc498eabe683dfe4/memes.json`).then(result => {
-                console.warn(JSON.stringify(Array.isArray(result.data.feed.article), 0 , 2))
+            axios.get(url).then(result => {
                 if (result.data && result.data.feed && Array.isArray(result.data.feed.article)) {
                     dispatch({
                         type: types.ARTICLES_RECIEVED, 
                         data: result.data.feed.article,
+                    });
+                    dispatch({
+                        type: types.REDIRECT_DATA_RECIEVED
                     });
                 } else {
                     dispatch({
@@ -18,9 +23,13 @@ export const getArticles = () => {
                         data: []
                     });
                 }
-            })
+            }).catch(function (error) {
+                // handle error
+                Alert.alert('Error', `Something wrong with your URL: ${error.message}`);
+            });
         } catch (e) {
-
+            // handle error
+            Alert.alert('Error', `Something wrong with your URL: ${e}`);
             dispatch({
                 type: types.ARTICLES_RECIEVED, 
                 data: []
