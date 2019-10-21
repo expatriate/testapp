@@ -1,13 +1,13 @@
 import { NavigationActions } from "react-navigation";
 
 /// ROUTES
-export const navigateToDetails = (taskid) =>
+export const navigateToDetails = (article) =>
 NavigationActions.navigate({
-    routeName: 'TaskDetail',
+    routeName: 'Details',
     params: {
-        taskid: taskid,
+        article: article,
     },
-    key: 'Task_' + taskid + new Date().getTime()
+    key: 'Article_' + article.id + new Date().getTime()
 });
 
 export const navigateToSetupSource = () =>

@@ -11,11 +11,6 @@ export default nav = (state = initialState, action) => {
                 NavigationActions.navigate({ routeName: 'Main' })
             );
         break;
-        case types.REDIRECT_LOGIN:
-            nextState = RootNavigator.router.getStateForAction(
-                NavigationActions.navigate({ routeName: 'Login' })
-            );
-        break;
         default:
             nextState = RootNavigator.router.getStateForAction(action, state);
         break;

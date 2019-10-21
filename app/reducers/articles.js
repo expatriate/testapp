@@ -2,9 +2,7 @@ import * as types from '../actionTypes.js';
 
 let initialState = {
     list: [],
-    page: 0,
-    offset: 0,
-    loading: true
+    url: ''
 };
 
 export default articles = (state = initialState, action) => {
@@ -12,7 +10,7 @@ export default articles = (state = initialState, action) => {
         case types.ARTICLES_RECIEVED:
             return {
                 ...state,
-                list: action.data.map((item, index) => {
+                list: action.data.data.map((item, index) => {
                     return {
                         ...item,
                         id: index,
@@ -20,7 +18,26 @@ export default articles = (state = initialState, action) => {
                     }
                 }).sort(function(a, b) {
                     return a.date - b.date
-                })
+                }),
+                url: action.data.url
+            }
+        break;
+        case types.ARTICLES_ADDED:
+            return {
+                ...state,
+                list: [
+                    ...state.list,
+                    ...action.data.data.map((item, index) => {
+                        return {
+                            ...item,
+                            id: index,
+                            date: item.date ? new Date(item.date).getTime() : new Date().getTime()
+                        }
+                    })
+                ].sort(function(a, b) {
+                    return a.date - b.date
+                }),
+                url: action.data.url
             }
         break;
         default:

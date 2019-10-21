@@ -15,16 +15,20 @@ export default StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         width: '100%',
-        marginBottom: 10
     },
     button: {
-        borderRadius: 10,
-        padding: 20,
-        backgroundColor: Colors.COLOR_RED,
+        borderRadius: 5,
+        paddingVertical: 12,
+        paddingHorizontal: 24,
+        backgroundColor: Colors.COLOR_LIGHT_BLUE,
+    },
+    buttonInactive: {
+        backgroundColor: Colors.COLOR_INACTIVE,
     },
     buttonText: {
-        fontSize: 20,
-        fontWeight: 'bold'
+        fontSize: 15,
+        fontWeight: 'bold',
+        color: Colors.COLOR_WHITE
     },
 
     formContainer: {
@@ -32,10 +36,32 @@ export default StyleSheet.create({
         paddingHorizontal: 20,
     },
     formInputText: {
-        fontSize: 20,
+        fontSize: 15,
         textAlign: 'center',
         borderBottomWidth: 1,
-        borderColor: Colors.COLOR_GRAY,
-        marginBottom: 10
+        borderColor: Colors.COLOR_BLACK_02,
+        marginBottom: 20
+    },
+
+    selectorContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: '100%',
+        marginBottom: 30
+    },
+    selector: {
+        width: 15,
+        height: 15,
+        marginRight: 10,
+        borderRadius: 15,
+        backgroundColor: Colors.COLOR_BLACK_02
+    },
+    selectorActive: {
+        backgroundColor: Colors.COLOR_LIGHT_BLUE
+    },
+    selectorText: {
+        fontSize: 14,
+        color: Colors.COLOR_BLACK_02
     }
 });

@@ -4,7 +4,8 @@ import {
     Text,
     TouchableOpacity,
     FlatList,
-    SafeAreaView
+    SafeAreaView,
+    Image
 } from 'react-native';
 
 import { bindActionCreators } from 'redux';
@@ -13,7 +14,8 @@ import { connect } from 'react-redux';
 import styles from './styles';
 
 import { 
-  navigateToSetupSource
+  navigateToSetupSource,
+  navigateToDetails
 } from '../../../actions';
 
 class MainPage extends Component {
@@ -25,13 +27,39 @@ class MainPage extends Component {
         //this.props.getArticles();
     }
 
+    navigateToArticle = (article) => {
+
+        this.props.navigateToDetails(article)
+    }
+
     _renderArticle = (article) => {
       return (
-        <View style={styles.item}>
+        <TouchableOpacity style={styles.item} onPress={() => {this.navigateToArticle(article.item)}}>
+            <View>
+                {
+                    article.item.imageUrl ?
+                        <View>
+                            <Image style={styles.articleImage} source={{uri:`${item.photo}`}} resizeMode='cover'/>
+                        </View>
+                    : null
+                }
+                <View>
+                    <Text>
+                        {
+                            article.item.title
+                        }
+                    </Text>
+                    <Text>
+                        {
+                            article.item.shortDescription
+                        }
+                    </Text>
+                </View>
+            </View>
             <Text style={styles.title}>
                 { article.item.title }
             </Text>
-        </View>
+        </TouchableOpacity>
       );
     }
 
@@ -80,6 +108,7 @@ class MainPage extends Component {
 function mapDispatchToProps(dispatch) {
     return bindActionCreators({
         navigateToSetupSource: navigateToSetupSource,
+        navigateToDetails: (article) => navigateToDetails(article),
     }, dispatch);
 }
 

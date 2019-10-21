@@ -35,13 +35,16 @@ export default StyleSheet.create({
         width: '100%',
         marginBottom: 10
     },
+
     button: {
-        borderRadius: 10,
-        padding: 20,
-        backgroundColor: Colors.COLOR_RED,
+        borderRadius: 5,
+        paddingVertical: 12,
+        paddingHorizontal: 24,
+        backgroundColor: Colors.COLOR_LIGHT_BLUE,
     },
     buttonText: {
-        fontSize: 20,
-        fontWeight: 'bold'
-    }
+        fontSize: 15,
+        fontWeight: 'bold',
+        color: Colors.COLOR_WHITE
+    },
 });

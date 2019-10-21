@@ -23,7 +23,8 @@ class SetupSourcePage extends Component {
 
 
         this.state = {
-            url: ''
+            url: '',
+            selectorActive: false
         }
     }
 
@@ -45,14 +46,17 @@ class SetupSourcePage extends Component {
         this.setState({
             url: 'https://gist.githubusercontent.com/happy-thorny/bd038afd981be300ac2ed6e5a8ad9f3c/raw/dd90f04475a2a7c1110151aacc498eabe683dfe4/memes.json'
         }, () => {
-            
+
             if (this.state.url.length) {
-                this.props.getArticles(this.state.url);
+                this.props.getArticles(this.state.url, this.state.selectorActive);
             } else {
                 Alert.alert('ERROR', 'URL cannot be empty')
             }
         })
-        //const url = 'https://gist.githubusercontent.com/happy-thorny/bd038afd981be300ac2ed6e5a8ad9f3c/raw/dd90f04475a2a7c1110151aacc498eabe683dfe4/memes.json';
+    }
+
+    toggleSelector = () => {
+        this.setState({selectorActive: !this.state.selectorActive})
     }
 
     render() {
@@ -71,10 +75,20 @@ class SetupSourcePage extends Component {
                             }
                         }
                     />
+                    <TouchableOpacity onPress={() => this.toggleSelector()}>
+                        <View style={styles.selectorContainer}>
+                            <View style={[styles.selector, this.state.selectorActive ? styles.selectorActive : '']}>
+                            </View>
+                            <Text style={styles.selectorText}>
+                                Add data to existing list
+                            </Text>
+                        </View>
+                    </TouchableOpacity>
+                    
                 </View>
                 <View style={styles.buttonContainer}>
                     <TouchableOpacity 
-                        style={styles.button} 
+                        style={[styles.button, !this.state.url.length ? styles.buttonInactive : '']} 
                         onPress={() => {this.fetchData()}}
                         >
                         <Text style={styles.buttonText}>
@@ -89,7 +103,7 @@ class SetupSourcePage extends Component {
 
 function mapDispatchToProps(dispatch) {
     return bindActionCreators({
-        getArticles: (url) => getArticles(url),
+        getArticles: (url, update) => getArticles(url, update),
     }, dispatch);
 }
 
