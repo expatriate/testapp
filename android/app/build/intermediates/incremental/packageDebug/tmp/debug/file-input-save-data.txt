@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Mon Oct 21 22:26:02 YEKT 2019
+#Tue Oct 22 00:28:10 YEKT 2019
 5.base=C\:\\Users\\Eee\\Desktop\\test_task\\test_task\\android\\app\\build\\intermediates\\transforms\\mergeJniLibs\\debug\\0
 42.base=C\:\\Users\\Eee\\Desktop\\test_task\\test_task\\android\\app\\build\\intermediates\\transforms\\mergeJniLibs\\debug\\0
 22.path=lib/x86/libyoga.so
