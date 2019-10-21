@@ -16,7 +16,8 @@ import styles from './styles';
 import { format } from 'date-fns';
 
 import { 
-    navigateBack
+    navigateBack,
+    setVisited
 } from '../../../actions';
 
 class DetailsPage extends Component {
@@ -50,7 +51,7 @@ class DetailsPage extends Component {
                     title: ''
                 }
         }, () => {
-            console.warn(this.state.article)
+            this.props.setVisited(this.state.article.id);
         })
     }
 
@@ -109,6 +110,7 @@ class DetailsPage extends Component {
 function mapDispatchToProps(dispatch) {
     return bindActionCreators({
         navigateBack: navigateBack,
+        setVisited: (id) => setVisited(id)
     }, dispatch);
 }
 

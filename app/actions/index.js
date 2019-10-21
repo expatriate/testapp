@@ -5,7 +5,8 @@ import {
 } from '../actions/nav.js';
 
 import {
-    getArticles
+    getArticles,
+    setVisited
 } from '../actions/articles.js';
 
 export {
@@ -14,4 +15,5 @@ export {
     navigateBack,
 
     getArticles,
+    setVisited
 };

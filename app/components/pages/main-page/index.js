@@ -44,11 +44,19 @@ class MainPage extends Component {
                     : null
                 }
                 <View style={[styles.col, {flex: 1}]}>
-                    <Text style={styles.title} numberOfLines={1} ellipsizeMode={'tail'}>
+                    <View style={[styles.row, styles.nameRow]}>
                         {
-                            article.item.title
+                            !article.item.visited ?
+                                <View style={styles.visitedMark}>
+                                </View>
+                            : null
                         }
-                    </Text>
+                        <Text style={styles.title} numberOfLines={1} ellipsizeMode={'tail'}>
+                            {
+                                article.item.title
+                            }
+                        </Text>
+                    </View>
                     <Text style={styles.description} numberOfLines={2} ellipsizeMode={'tail'}>
                         {
                             article.item.shortDescription

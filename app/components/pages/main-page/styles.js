@@ -17,12 +17,26 @@ export default StyleSheet.create({
     title: {
         fontSize: 16,
         color: Colors.COLOR_BLACK_08,
-        marginBottom: 8
+        flex: 1
     },
     description: {
         fontSize: 14,
         color: Colors.COLOR_BLACK_06,
         flex: 1
+    },
+
+    nameRow: {
+        justifyContent: 'center',
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginBottom: 8,
+    },
+    visitedMark: {
+        width: 8,
+        height: 8,
+        borderRadius: 8,
+        backgroundColor: Colors.COLOR_LIGHT_BLUE,
+        marginRight: 8,
     },
 
     nullDatacontainer: {

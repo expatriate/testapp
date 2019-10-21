@@ -45,3 +45,12 @@ export const getArticles = (url, update = false) => {
         }
     }
 }
+
+export const setVisited = (id) => {
+    return dispatch => {
+        dispatch({
+            type: types.ARTICLE_VISITED, 
+            data: id
+        });
+    }
+}
