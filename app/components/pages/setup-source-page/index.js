@@ -31,31 +31,16 @@ class SetupSourcePage extends Component {
     componentDidMount() {
     }
 
-    _renderArticle = (article) => {
-      return (
-        <View style={styles.item}>
-            <Text style={styles.title}>
-                { article.item.title }
-            </Text>
-        </View>
-      );
+    fetchData() {
+
+        if (this.state.url.length) {
+            this.props.getArticles(this.state.url, this.state.selectorActive);
+        } else {
+            Alert.alert('ERROR', 'URL cannot be empty')
+        }
     }
 
-    fetchData = () => {
-        
-        this.setState({
-            url: 'https://gist.githubusercontent.com/happy-thorny/bd038afd981be300ac2ed6e5a8ad9f3c/raw/dd90f04475a2a7c1110151aacc498eabe683dfe4/memes.json'
-        }, () => {
-
-            if (this.state.url.length) {
-                this.props.getArticles(this.state.url, this.state.selectorActive);
-            } else {
-                Alert.alert('ERROR', 'URL cannot be empty')
-            }
-        })
-    }
-
-    toggleSelector = () => {
+    toggleSelector() {
         this.setState({selectorActive: !this.state.selectorActive})
     }
 

@@ -7,10 +7,7 @@ import {
     Text,
     Alert
 } from 'react-native';
-import { 
-    Colors, 
-    Gradients 
-} from '../components/styles/colors.js';
+
 import MainPage from '../components/pages/main-page';
 import DetailsPage from '../components/pages/details-page';
 import SetupSourcePage from '../components/pages/setup-source-page';

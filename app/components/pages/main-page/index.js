@@ -47,7 +47,6 @@ class MainPage extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        console.warn('next', nextProps.articles.version, 'this', this.props.articles.version)
         if (nextProps.articles.version > this.props.articles.version) {
             this.setState({
                 refreshing: false
@@ -55,7 +54,7 @@ class MainPage extends Component {
         }
     }
 
-    _renderArticle(article) {
+    renderArticle(article) {
         return (
             <TouchableOpacity style={styles.item} onPress={() => {this.navigateToArticle(article.item)}}>
                 <View style={styles.row}>
@@ -105,7 +104,7 @@ class MainPage extends Component {
                     initialNumToRender={10}
                     renderItem={
                         function(item) {
-                            return this._renderArticle(item)
+                            return this.renderArticle(item)
                         }.bind(this)
                     }
                     ListEmptyComponent={() => {

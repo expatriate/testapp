@@ -5,7 +5,7 @@ import { Colors } from '../../styles/colors';
 
 export default StyleSheet.create({
     container: {
-        flex: 1
+        flex: 1,
     },
     item: {
         backgroundColor: Colors.COLOR_LIGHT_GRAY,
