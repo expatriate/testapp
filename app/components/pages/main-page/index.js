@@ -15,60 +15,83 @@ import styles from './styles';
 
 import { 
     navigateToSetupSource,
-    navigateToDetails
+    navigateToDetails,
+    getArticles
 } from '../../../actions';
 
 class MainPage extends Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            refreshing: false
+        }
     }
 
     componentDidMount() {
-        //this.props.getArticles();
     }
 
-    navigateToArticle = (article) => {
+    navigateToArticle(article) {
 
         this.props.navigateToDetails(article)
     }
 
-    _renderArticle = (article) => {
-      return (
-        <TouchableOpacity style={styles.item} onPress={() => {this.navigateToArticle(article.item)}}>
-            <View style={styles.row}>
-                {
-                    article.item.imageUrl ?
-                        <View style={styles.imageContainer}>
-                            <Image style={styles.articleImage} source={{uri:`${article.item.imageUrl}`}} resizeMode='contain'/>
-                        </View>
-                    : null
-                }
-                <View style={[styles.col, {flex: 1}]}>
-                    <View style={[styles.row, styles.nameRow]}>
-                        {
-                            !article.item.visited ?
-                                <View style={styles.visitedMark}>
-                                </View>
-                            : null
-                        }
-                        <Text style={styles.title} numberOfLines={1} ellipsizeMode={'tail'}>
+    pullToRefresh() {
+        this.setState({
+            refreshing: true
+        });
+
+        if (this.props.articles.url) {
+            this.props.getArticles(this.props.articles.url, false);
+        }
+    }
+
+    componentWillReceiveProps(nextProps) {
+        console.warn('next', nextProps.articles.version, 'this', this.props.articles.version)
+        if (nextProps.articles.version > this.props.articles.version) {
+            this.setState({
+                refreshing: false
+            })
+        }
+    }
+
+    _renderArticle(article) {
+        return (
+            <TouchableOpacity style={styles.item} onPress={() => {this.navigateToArticle(article.item)}}>
+                <View style={styles.row}>
+                    {
+                        article.item.imageUrl ?
+                            <View style={styles.imageContainer}>
+                                <Image style={styles.articleImage} source={{uri:`${article.item.imageUrl}`}} resizeMode='contain'/>
+                            </View>
+                        : null
+                    }
+                    <View style={[styles.col, {flex: 1}]}>
+                        <View style={[styles.row, styles.nameRow]}>
                             {
-                                article.item.title
+                                !article.item.visited ?
+                                    <View style={styles.visitedMark}>
+                                    </View>
+                                : null
+                            }
+                            <Text style={styles.title} numberOfLines={1} ellipsizeMode={'tail'}>
+                                {
+                                    article.item.title
+                                }
+                            </Text>
+                        </View>
+                        <Text style={styles.description} numberOfLines={2} ellipsizeMode={'tail'}>
+                            {
+                                article.item.shortDescription
                             }
                         </Text>
                     </View>
-                    <Text style={styles.description} numberOfLines={2} ellipsizeMode={'tail'}>
-                        {
-                            article.item.shortDescription
-                        }
-                    </Text>
                 </View>
-            </View>
-        </TouchableOpacity>
-      );
+            </TouchableOpacity>
+        );
     }
 
-    setupTheSource = () => {
+    setupTheSource() {
         
         this.props.navigateToSetupSource();
     }
@@ -94,6 +117,10 @@ class MainPage extends Component {
                             </View>
                         )}
                     }
+                    refreshing={this.state.refreshing}
+                    onRefresh={()=>{
+                        this.pullToRefresh()
+                    }}
                     />
                 <View style={styles.buttonContainer}>
                     <TouchableOpacity 
@@ -114,6 +141,7 @@ function mapDispatchToProps(dispatch) {
     return bindActionCreators({
         navigateToSetupSource: navigateToSetupSource,
         navigateToDetails: (article) => navigateToDetails(article),
+        getArticles: (url, update) => getArticles(url, update),
     }, dispatch);
 }
 

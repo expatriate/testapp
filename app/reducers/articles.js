@@ -2,7 +2,8 @@ import * as types from '../actionTypes.js';
 
 let initialState = {
     list: [],
-    url: ''
+    url: '',
+    version: 0
 };
 
 const regex = /(<([^>]+)>)/ig;
@@ -26,7 +27,8 @@ export default articles = (state = initialState, action) => {
                 }).sort(function(a, b) {
                     return a.date - b.date
                 }),
-                url: action.data.url
+                url: action.data.url,
+                version: new Date().getTime()
             }
         break;
         case types.ARTICLES_ADDED:
@@ -49,7 +51,8 @@ export default articles = (state = initialState, action) => {
                 ].sort(function(a, b) {
                     return a.date - b.date
                 }),
-                url: action.data.url
+                url: action.data.url,
+                version: new Date().getTime()
             }
         break;
         case types.ARTICLE_VISITED:
