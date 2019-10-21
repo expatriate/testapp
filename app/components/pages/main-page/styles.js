@@ -8,15 +8,23 @@ export default StyleSheet.create({
         flex: 1
     },
     item: {
-        backgroundColor: '#f9c2ff',
+        backgroundColor: Colors.COLOR_LIGHT_GRAY,
         padding: 10,
-        marginVertical: 8,
-        marginHorizontal: 16,
+        marginVertical: 2,
+        marginHorizontal: 4,
     },
+
     title: {
         fontSize: 16,
-        color: '#000000'
+        color: Colors.COLOR_BLACK_08,
+        marginBottom: 8
     },
+    description: {
+        fontSize: 14,
+        color: Colors.COLOR_BLACK_06,
+        flex: 1
+    },
+
     nullDatacontainer: {
         flexDirection: 'row',
         alignItems: 'center',
@@ -33,7 +41,9 @@ export default StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         width: '100%',
-        marginBottom: 10
+        marginBottom: 10,
+        position: 'absolute',
+        bottom: 0
     },
 
     button: {
@@ -47,4 +57,19 @@ export default StyleSheet.create({
         fontWeight: 'bold',
         color: Colors.COLOR_WHITE
     },
+
+    articleImage: {
+        width: 50,
+        height: 50,
+    },
+    imageContainer: {
+        marginRight: 10,
+    },
+
+    row: {
+        flexDirection: 'row'
+    },
+    col: {
+        flexDirection: 'column'
+    }
 });

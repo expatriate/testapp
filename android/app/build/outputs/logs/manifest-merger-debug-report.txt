@@ -4,6 +4,7 @@ ADDED from C:\Users\Eee\Desktop\test_task\test_task\android\app\src\main\Android
 INJECTED from C:\Users\Eee\Desktop\test_task\test_task\android\app\src\main\AndroidManifest.xml:1:1-48:12
 INJECTED from C:\Users\Eee\Desktop\test_task\test_task\android\app\src\main\AndroidManifest.xml:1:1-48:12
 INJECTED from C:\Users\Eee\Desktop\test_task\test_task\android\app\src\main\AndroidManifest.xml:1:1-48:12
+MERGED from [:react-native-webview] C:\Users\Eee\Desktop\test_task\test_task\node_modules\react-native-webview\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-23:12
 MERGED from [:react-native-screens] C:\Users\Eee\Desktop\test_task\test_task\node_modules\react-native-screens\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
 MERGED from [:react-native-gesture-handler] C:\Users\Eee\Desktop\test_task\test_task\node_modules\react-native-gesture-handler\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
 MERGED from [com.facebook.react:react-native:0.59.10] C:\Users\Eee\.gradle\caches\transforms-1\files-1.1\jetified-react-native-0.59.10.aar\71c7f4bbdd4aaa17ba606edf235e3ac8\AndroidManifest.xml:2:1-13:12
@@ -131,6 +132,8 @@ ADDED from C:\Users\Eee\Desktop\test_task\test_task\android\app\src\main\Android
 		ADDED from C:\Users\Eee\Desktop\test_task\test_task\android\app\src\main\AndroidManifest.xml:25:22-70
 application
 ADDED from C:\Users\Eee\Desktop\test_task\test_task\android\app\src\main\AndroidManifest.xml:28:5-46:19
+MERGED from [:react-native-webview] C:\Users\Eee\Desktop\test_task\test_task\node_modules\react-native-webview\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-21:19
+MERGED from [:react-native-webview] C:\Users\Eee\Desktop\test_task\test_task\node_modules\react-native-webview\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-21:19
 MERGED from [com.facebook.react:react-native:0.59.10] C:\Users\Eee\.gradle\caches\transforms-1\files-1.1\jetified-react-native-0.59.10.aar\71c7f4bbdd4aaa17ba606edf235e3ac8\AndroidManifest.xml:11:5-20
 MERGED from [com.facebook.react:react-native:0.59.10] C:\Users\Eee\.gradle\caches\transforms-1\files-1.1\jetified-react-native-0.59.10.aar\71c7f4bbdd4aaa17ba606edf235e3ac8\AndroidManifest.xml:11:5-20
 MERGED from [androidx.core:core:1.0.0] C:\Users\Eee\.gradle\caches\transforms-1\files-1.1\core-1.0.0.aar\819cb4d28c11aec2fdc52025428ba22e\AndroidManifest.xml:22:5-89
@@ -181,6 +184,8 @@ uses-sdk
 INJECTED from C:\Users\Eee\Desktop\test_task\test_task\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Eee\Desktop\test_task\test_task\android\app\src\main\AndroidManifest.xml
 INJECTED from C:\Users\Eee\Desktop\test_task\test_task\android\app\src\main\AndroidManifest.xml
+MERGED from [:react-native-webview] C:\Users\Eee\Desktop\test_task\test_task\node_modules\react-native-webview\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-webview] C:\Users\Eee\Desktop\test_task\test_task\node_modules\react-native-webview\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-screens] C:\Users\Eee\Desktop\test_task\test_task\node_modules\react-native-screens\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-screens] C:\Users\Eee\Desktop\test_task\test_task\node_modules\react-native-screens\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-gesture-handler] C:\Users\Eee\Desktop\test_task\test_task\node_modules\react-native-gesture-handler\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
@@ -263,3 +268,19 @@ INJECTED from C:\Users\Eee\Desktop\test_task\test_task\android\app\src\main\Andr
 		INJECTED from C:\Users\Eee\Desktop\test_task\test_task\android\app\src\main\AndroidManifest.xml
 		ADDED from C:\Users\Eee\Desktop\test_task\test_task\android\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Eee\Desktop\test_task\test_task\android\app\src\main\AndroidManifest.xml
+provider#com.reactnativecommunity.webview.RNCWebViewFileProvider
+ADDED from [:react-native-webview] C:\Users\Eee\Desktop\test_task\test_task\node_modules\react-native-webview\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:9-20:20
+	android:grantUriPermissions
+		ADDED from [:react-native-webview] C:\Users\Eee\Desktop\test_task\test_task\node_modules\react-native-webview\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:16:13-47
+	android:authorities
+		ADDED from [:react-native-webview] C:\Users\Eee\Desktop\test_task\test_task\node_modules\react-native-webview\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:14:13-64
+	android:exported
+		ADDED from [:react-native-webview] C:\Users\Eee\Desktop\test_task\test_task\node_modules\react-native-webview\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:15:13-37
+	android:name
+		ADDED from [:react-native-webview] C:\Users\Eee\Desktop\test_task\test_task\node_modules\react-native-webview\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:13:13-83
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from [:react-native-webview] C:\Users\Eee\Desktop\test_task\test_task\node_modules\react-native-webview\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:17:13-19:63
+	android:resource
+		ADDED from [:react-native-webview] C:\Users\Eee\Desktop\test_task\test_task\node_modules\react-native-webview\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:19:17-60
+	android:name
+		ADDED from [:react-native-webview] C:\Users\Eee\Desktop\test_task\test_task\node_modules\react-native-webview\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:18:17-67

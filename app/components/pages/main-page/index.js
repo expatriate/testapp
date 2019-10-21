@@ -35,30 +35,27 @@ class MainPage extends Component {
     _renderArticle = (article) => {
       return (
         <TouchableOpacity style={styles.item} onPress={() => {this.navigateToArticle(article.item)}}>
-            <View>
+            <View style={styles.row}>
                 {
                     article.item.imageUrl ?
-                        <View>
-                            <Image style={styles.articleImage} source={{uri:`${item.photo}`}} resizeMode='cover'/>
+                        <View style={styles.imageContainer}>
+                            <Image style={styles.articleImage} source={{uri:`${article.item.imageUrl}`}} resizeMode='contain'/>
                         </View>
                     : null
                 }
-                <View>
-                    <Text>
+                <View style={[styles.col, {flex: 1}]}>
+                    <Text style={styles.title} numberOfLines={1} ellipsizeMode={'tail'}>
                         {
                             article.item.title
                         }
                     </Text>
-                    <Text>
+                    <Text style={styles.description} numberOfLines={2} ellipsizeMode={'tail'}>
                         {
                             article.item.shortDescription
                         }
                     </Text>
                 </View>
             </View>
-            <Text style={styles.title}>
-                { article.item.title }
-            </Text>
         </TouchableOpacity>
       );
     }
@@ -74,7 +71,7 @@ class MainPage extends Component {
                 <FlatList
                     keyExtractor={item => `${item.id}_article`}
                     data={this.props.articles.list}
-                    initialNumToRender={2}
+                    initialNumToRender={10}
                     renderItem={
                         function(item) {
                             return this._renderArticle(item)

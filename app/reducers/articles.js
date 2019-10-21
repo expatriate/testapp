@@ -5,16 +5,21 @@ let initialState = {
     url: ''
 };
 
+const regex = /(<([^>]+)>)/ig;
+
 export default articles = (state = initialState, action) => {
     switch (action.type) {
         case types.ARTICLES_RECIEVED:
+
             return {
                 ...state,
                 list: action.data.data.map((item, index) => {
                     return {
                         ...item,
-                        id: index,
-                        date: new Date(item.date).getTime()
+                        id: `${index}_${new Date().getTime()}`,
+                        date: item.date ? new Date(item.date).getTime() : new Date().getTime(),
+                        shortDescription: item.shortDescription.replace(regex, ''),
+                        title: item.title.replace(regex, ''),
                     }
                 }).sort(function(a, b) {
                     return a.date - b.date
@@ -23,6 +28,7 @@ export default articles = (state = initialState, action) => {
             }
         break;
         case types.ARTICLES_ADDED:
+
             return {
                 ...state,
                 list: [
@@ -30,8 +36,10 @@ export default articles = (state = initialState, action) => {
                     ...action.data.data.map((item, index) => {
                         return {
                             ...item,
-                            id: index,
-                            date: item.date ? new Date(item.date).getTime() : new Date().getTime()
+                            id: `${index}_${new Date().getTime()}`,
+                            date: item.date ? new Date(item.date).getTime() : new Date().getTime(),
+                            shortDescription: item.shortDescription.replace(regex, ''),
+                            title: item.title.replace(regex, ''),
                         }
                     })
                 ].sort(function(a, b) {

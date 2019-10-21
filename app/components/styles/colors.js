@@ -61,6 +61,9 @@ export const Colors = {
     COLOR_LIGHT_BLUE: '#35B2B4',
     COLOR_INACTIVE: '#8B98A0',
     COLOR_WHITE: '#FFFFFF',
+    COLOR_LIGHT_GRAY: '#CCCCCC',
+    COLOR_BLACK_08: 'rgba(0,0,0,0.8)',
+    COLOR_BLACK_04: 'rgba(0,0,0,0.4)',
 };
 
 export const Gradients = {
